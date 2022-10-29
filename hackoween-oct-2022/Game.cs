@@ -15,7 +15,6 @@ namespace hackoween_oct_2022
         }
 
         const string FRAME_FILE = "frames.json";
-        //  TODO: Init this in constructor
         private List<ISelectable> AllFrames;
 
         public void LoadFrames()
@@ -32,6 +31,14 @@ namespace hackoween_oct_2022
                     AllFrames.Add(new Frame(uf));
                 }
             }
+        }
+        public void ChooseA()
+        {
+
+        }
+        public void ChooseB()
+        {
+
         }
     }
 }
