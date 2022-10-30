@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace hackoween_oct_2022
 {
+    public enum Type { Frame, Action};
     public interface ISelectable
     {
-        void SelectFrame();
+        Type GetType();
+        string GetName();
     }
 }

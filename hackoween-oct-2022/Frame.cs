@@ -23,16 +23,21 @@ namespace hackoween_oct_2022
         }
 
         public string Name { get; set; }
-        public GameAction OutcomeA { get; set; }
-        public GameAction OutcomeB { get; set; }
+        public string OutcomeA { get; set; }
+        public string OutcomeB { get; set; }
         public string Text { get; set; }
         public string ChoiceA { get; set; }
         public string ChoiceB { get; set; }
         public string ImagePath { get; set; }
 
-        public void SelectFrame()
+        public string GetName()
         {
-            throw new NotImplementedException();
+            return Name;
+        }
+
+        Type ISelectable.GetType()
+        {
+            return Type.Frame;
         }
     }
 }
