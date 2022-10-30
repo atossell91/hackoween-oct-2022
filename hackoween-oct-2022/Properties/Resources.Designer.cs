@@ -63,6 +63,16 @@ namespace hackoween_oct_2022.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pumpkin_ant {
+            get {
+                object obj = ResourceManager.GetObject("pumpkin-ant", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pumpkin_t {
             get {
                 object obj = ResourceManager.GetObject("pumpkin_t", resourceCulture);

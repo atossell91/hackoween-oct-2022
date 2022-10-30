@@ -169,7 +169,7 @@ namespace hackoween_oct_2022
             this.pb_viewPort.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pb_viewPort.Image = global::hackoween_oct_2022.Properties.Resources.pumpkin_t;
+            this.pb_viewPort.Image = global::hackoween_oct_2022.Properties.Resources.pumpkin_ant;
             this.pb_viewPort.Location = new System.Drawing.Point(3, 3);
             this.pb_viewPort.Name = "pb_viewPort";
             this.pb_viewPort.Size = new System.Drawing.Size(664, 214);

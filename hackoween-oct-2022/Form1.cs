@@ -18,6 +18,7 @@ namespace hackoween_oct_2022
         {
             game = new Game();
             game.UpdateDisplayEvent += GameUpdateHandler;
+            game.FormClosedRequest += HandleCloseRequest;
             InitializeComponent();
             game.Init();
         }
@@ -47,6 +48,11 @@ namespace hackoween_oct_2022
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void HandleCloseRequest(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

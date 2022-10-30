@@ -119,6 +119,10 @@
   <ItemGroup>
     <None Include="Resources\pumpkin_t.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="pumpkin-ant.png" />
+    <None Include="Resources\pumpkin-ant.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.6\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.6\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

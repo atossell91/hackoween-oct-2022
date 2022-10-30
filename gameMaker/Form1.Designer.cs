@@ -178,7 +178,8 @@ namespace gameMaker
             this.cb_actionName.Items.AddRange(new object[] {
             "none",
             "modifyHealth",
-            "facebookScript"});
+            "fbScript",
+            "endGame"});
             this.cb_actionName.Location = new System.Drawing.Point(145, 259);
             this.cb_actionName.Name = "cb_actionName";
             this.cb_actionName.Size = new System.Drawing.Size(385, 28);
@@ -372,8 +373,8 @@ namespace gameMaker
             this.tb_odds.Name = "tb_odds";
             this.tb_odds.Size = new System.Drawing.Size(385, 26);
             this.tb_odds.TabIndex = 4;
-            this.tb_odds.TextChanged += new System.EventHandler(this.tb_odds_TextChanged);
             this.tb_odds.Enter += new System.EventHandler(this.set_selected);
+            this.tb_odds.Leave += new System.EventHandler(this.tb_odds_TextChanged);
             // 
             // tb_param
             // 

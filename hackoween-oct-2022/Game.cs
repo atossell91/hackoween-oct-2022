@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace hackoween_oct_2022
     {
         public delegate void GameEventHandler(Object sender, GameEventArgs e);
         public event GameEventHandler UpdateDisplayEvent;
+        public event EventHandler FormClosedRequest;
         public int Health = 100;
         Random random;
         public const int RAND_MIN = 1;
@@ -30,19 +32,16 @@ namespace hackoween_oct_2022
         public void Init()
         {
             LoadFrames();
-            foreach (ISelectable s in AllFrames)
+            ISelectable s = AllFrames[0];
+            while (s.GetType() == Type.Action)
             {
-                if (s.GetType() == Type.Action)
-                {
-                    HandleAction((GameAction)s);
-                }
-                else
-                {
-                    Frame f = (Frame)s;
-                    UpdateFrameDisplay(f);
-                    currentFrame = f;
-                    break;
-                }
+                s = findFrame(HandleAction((GameAction)s));
+            }
+            if (s.GetType() == Type.Frame)
+            {
+                Frame f = (Frame)s;
+                UpdateFrameDisplay(f);
+                currentFrame = f;
             }
             //Frame f = (Frame)AllFrames.Find((o) => { return o.GetType() == Type.Frame; });
             //UpdateFrameDisplay(f);
@@ -82,6 +81,17 @@ namespace hackoween_oct_2022
         {
             gameFuncs.Add("modifyHealth", (o) => { Health += int.Parse(o.ToString()); });
             gameFuncs.Add("none", (o) => {});
+            gameFuncs.Add("fbScript", (o) => {
+                ProcessStartInfo psi = new ProcessStartInfo();
+                psi.WindowStyle = ProcessWindowStyle.Hidden;
+                psi.FileName = "python";
+                psi.Arguments = "fbscript.py";
+
+                Process p = new Process();
+                p.StartInfo = psi;
+                p.Start();
+            });
+            gameFuncs.Add("endGame", (o) => { FormClosedRequest?.Invoke(this, EventArgs.Empty); });
         }
 
         ISelectable findFrame(string name)
