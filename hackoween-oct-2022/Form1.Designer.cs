@@ -106,7 +106,7 @@ namespace hackoween_oct_2022
             this.b_optionB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.b_optionB.FlatAppearance.BorderSize = 0;
             this.b_optionB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.b_optionB.Font = new System.Drawing.Font("Chiller", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b_optionB.Font = new System.Drawing.Font("Chiller", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_optionB.Location = new System.Drawing.Point(385, 6);
             this.b_optionB.Name = "b_optionB";
             this.b_optionB.Size = new System.Drawing.Size(376, 70);
@@ -121,7 +121,7 @@ namespace hackoween_oct_2022
             this.b_optionA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.b_optionA.FlatAppearance.BorderSize = 0;
             this.b_optionA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.b_optionA.Font = new System.Drawing.Font("Chiller", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b_optionA.Font = new System.Drawing.Font("Chiller", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_optionA.Location = new System.Drawing.Point(3, 6);
             this.b_optionA.Name = "b_optionA";
             this.b_optionA.Size = new System.Drawing.Size(376, 70);

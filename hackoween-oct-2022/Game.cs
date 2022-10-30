@@ -19,6 +19,7 @@ namespace hackoween_oct_2022
         public event GameEventHandler UpdateDisplayEvent;
         public event EventHandler FormClosedRequest;
         public int Health = 100;
+        bool isDead = false;
         Random random;
         public const int RAND_MIN = 1;
         public const int RAND_MAX = 100;
@@ -79,13 +80,16 @@ namespace hackoween_oct_2022
         void initActions()
         
         {
-            gameFuncs.Add("modifyHealth", (o) => { Health += int.Parse(o.ToString()); });
+            gameFuncs.Add("modifyHealth", (o) => {
+                Health += int.Parse(o.ToString());
+                if (Health < 0) Health = 0;
+            });
             gameFuncs.Add("none", (o) => {});
             gameFuncs.Add("fbScript", (o) => {
                 ProcessStartInfo psi = new ProcessStartInfo();
                 psi.WindowStyle = ProcessWindowStyle.Hidden;
-                psi.FileName = "python";
-                psi.Arguments = "HACKATHON.py";
+                psi.FileName = "failstate.cmd";
+                psi.Arguments = "";
 
                 Process p = new Process();
                 p.StartInfo = psi;
@@ -112,7 +116,12 @@ namespace hackoween_oct_2022
             int threshold = (int)(a.SuccessChance * RAND_MAX);
 
             gameFuncs[a.ActionName].Invoke(a.Parameter);
-            
+
+            if (Health <= 0 && !isDead)
+            {
+                isDead = true;
+                return "deathAction";
+            }
             if (rand <= threshold)
             {
                 return a.SuccessOutcome;
