@@ -85,7 +85,7 @@ namespace hackoween_oct_2022
                 ProcessStartInfo psi = new ProcessStartInfo();
                 psi.WindowStyle = ProcessWindowStyle.Hidden;
                 psi.FileName = "python";
-                psi.Arguments = "fbscript.py";
+                psi.Arguments = "HACKATHON.py";
 
                 Process p = new Process();
                 p.StartInfo = psi;
